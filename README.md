@@ -16,6 +16,17 @@ yq -> same for yaml <br>
 k9s -> manage cluster inside a TUI <br>
 bash-completion -> just bash completion (normal arch package) <br>
 
+```bash
+sudo pacman -S helm terraform ansible docker docker-compose kubectx stern
+```
+
+helm -> kube package manager <br>
+terraform -> Infrastructure as Code <br>
+ansible -> auto config managment <br>
+docker -> container <br>
+docker-compose -> multi local container manager <br>
+stern -> multi-pods logs <br>
+
 # SSH
 Enable ssh
 ```bash
