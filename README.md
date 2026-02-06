@@ -29,6 +29,6 @@ curl -sfL https://get.k3s.io | sh -
 # Check for Ready node, takes ~30 seconds 
 sudo k3s kubectl get node
 
-flux bootstrap github --token-auth --owner="Shoukshai" --repository="GitOps" --branch=main --path="clusters/k3s" --personal
+flux bootstrap github --token-auth --owner="Shoukshai" --repository="GitOps" --branch=main --path="clusters/k3s" --personal --timeout=15m
 ```
 
