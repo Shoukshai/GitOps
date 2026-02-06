@@ -4,14 +4,14 @@ sudo pacman -S curl git kubectl fluxcd ca-certificates openssh \
                     jq yq k9s bash-completion
 ```
 
-curl -> k3s
-git -> for the GitOps
-kubectl -> talks to Kubernetes
-fluxcd -> main app to controle the cluster
-ca-certificates -> https
-openssh -> headless vm
-
-jq -> json filter/reader
-yq -> same for yaml
-k9s -> manage cluster inside a TUI
-bash-completion -> just bash completion (normal arch package)
+curl -> k3s <br>
+git -> for the GitOps <br>
+kubectl -> talks to Kubernetes <br>
+fluxcd -> main app to controle the cluster <br>
+ca-certificates -> https <br>
+openssh -> headless vm <br>
+ <br>
+jq -> json filter/reader <br>
+yq -> same for yaml <br>
+k9s -> manage cluster inside a TUI <br>
+bash-completion -> just bash completion (normal arch package) <br>
