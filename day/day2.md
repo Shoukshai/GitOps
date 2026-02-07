@@ -137,7 +137,7 @@ flux reconcile source git flux-system
 flux reconcile kustomization flux-system --with-source
 ```
 
-And then grafana should be up, I added a port forward rule inside virtualbox since the vm is in NAR and not bridge <br>
+And then grafana should be up, I added a port forward rule inside virtualbox since the vm is in NAT and not bridge <br>
 Now I can acces grafana through `http://localhost:3000`
 
 ## 5. Structure of the github repo
@@ -170,4 +170,5 @@ GitOps/
 │       └── prometheus-community.yaml
 └── README.md
 ```
+
 
