@@ -1,0 +1,14 @@
+# local secrets
+*.secret
+*.key
+.env
+.secrets/
+
+# Tokens
+*token*
+*ghp_*
+
+# Temp files
+*.swp
+*.swo
+*~
