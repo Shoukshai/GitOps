@@ -1,0 +1,53 @@
+apiVersion :v1
+kind: Namespace
+metadata:
+  name: monitoring
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kube-prometheus-stack
+  namespace: flux-system
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      version: '>=65.0.0'
+      sourceRef:
+        kind: HelmRepository
+        name: prometheus-community
+        namespace: flux-system
+      interval: 12h
+  targetNamespace: monitoring
+  install:
+    createNamespace: True
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
+    grafana:
+      enable: true
+      adminPassword: "admin"
+      service:
+        type: NodePort
+        nodePort: 30080
+      persistence:
+        enable:  true
+        size: 2Gi
+    prometheus:
+      prometheusSpec:
+        retention: 7d
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              accessModes: ["ReadWriteOnce"]
+              resources:
+                requests:
+                  storage: 10Gi
+        resources:
+          requests:
+            memory: 512Mi
+            cpu: 250m
+          kuluts:
+            memory: 2Gi
+            cpu: 1000m
