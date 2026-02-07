@@ -30,7 +30,7 @@ metadata:
 spec:
   interval: 10m
   path: infrastructure/monitoring
-  prunt: true
+  prune: true
   sourceRef:
     kind: GitRepository
     name: gitops-infra
