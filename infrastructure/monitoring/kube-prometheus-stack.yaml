@@ -21,19 +21,21 @@ spec:
       interval: 12h
   targetNamespace: monitoring
   install:
-    createNamespace: True
+    createNamespace: true
     crds: CreateReplace
   upgrade:
     crds: CreateReplace
+  values:
     grafana:
-      enable: true
+      enabled: true
       adminPassword: "admin"
       service:
         type: NodePort
         nodePort: 30080
       persistence:
-        enable:  true
+        enabled: true
         size: 2Gi
+    
     prometheus:
       prometheusSpec:
         retention: 7d
@@ -48,6 +50,6 @@ spec:
           requests:
             memory: 512Mi
             cpu: 250m
-          kuluts:
+          limits:
             memory: 2Gi
             cpu: 1000m
