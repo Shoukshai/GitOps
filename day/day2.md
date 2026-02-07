@@ -55,6 +55,7 @@ spec:
       persistence:
         enabled: true
         size: 2Gi
+
     prometheus:
       prometheusSpec:
         retention: 7d
@@ -74,19 +75,8 @@ spec:
             cpu: 1000m
 ```
 
-## 2. Then we connect everything to flux, we create `infrastructure.yaml` inside `/clusters/k3s/`:
+## 2. Then we connect everything to flux, we create `infrastructure.yaml` inside `/clusters/k3s/flux-system/`:
 ```yaml
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
-metadata:
-  name: gitops-infra
-  namespace: flux-system
-spec:
-  interval: 1m
-  url: https://github.com/Shoukshai/GitOps
-  ref:
-    branch: main
----
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -98,7 +88,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: gitops-infra
+    name: gitops-repo
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -111,7 +101,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: gitops-infra
+    name: gitops-repo
   dependsOn:
     - name: infra-sources
   healthChecks:
@@ -148,3 +138,4 @@ flux reconcile kustomization flux-system --with-source
 
 And then grafana should be up, I added a port forward rule inside virtualbox since the vm is in NAR and not bridge <br>
 Now I can acces grafana through `http://localhost:3000`
+
