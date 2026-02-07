@@ -20,4 +20,4 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: gitops-apps
+    name: gitops-repo

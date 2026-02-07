@@ -9,7 +9,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: gitops-apps
+    name: gitops-repo
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -22,7 +22,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: gitops-apps
+    name: gitops-repo
   dependsOn:
     - name: infra-sources
   healthChecks:
