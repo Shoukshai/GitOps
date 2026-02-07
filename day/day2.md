@@ -140,4 +140,34 @@ flux reconcile kustomization flux-system --with-source
 And then grafana should be up, I added a port forward rule inside virtualbox since the vm is in NAR and not bridge <br>
 Now I can acces grafana through `http://localhost:3000`
 
+## 5. Structure of the github repo
+Tree :
+```bash
+GitOps/
+├── apps
+│   ├── base
+│   │   └── whoami
+│   │       ├── deployment.yaml
+│   │       └── kustomization.yaml
+│   └── production
+├── clusters
+│   └── k3s
+│       └── flux-system
+│           ├── apps.yaml
+│           ├── gotk-components.yaml
+│           ├── gotk-sync.yaml
+│           ├── infrastructure.yaml
+│           ├── kustomization.yaml
+│           └── sources.yaml
+├── day
+│   ├── day1.md
+│   └── day2.md
+├── infrastructure
+│   ├── ingress
+│   ├── monitoring
+│   │   └── kube-prometheus-stack.yaml
+│   └── sources
+│       └── prometheus-community.yaml
+└── README.md
+```
 
