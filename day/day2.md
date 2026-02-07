@@ -126,7 +126,8 @@ flux reconcile source git flux-system
 flux reconcile kustomization flux-system --with-source
 ```
 
-## 4. CLean the mess
+## 4. Clean the mess
+This is because of the other configuration I tried by following the tutorial without thinking
 ```bahs
 kubectl delete kustomization apps -n flux-system
 kubectl delete kustomization infra-sources -n flux-system
@@ -138,4 +139,5 @@ flux reconcile kustomization flux-system --with-source
 
 And then grafana should be up, I added a port forward rule inside virtualbox since the vm is in NAR and not bridge <br>
 Now I can acces grafana through `http://localhost:3000`
+
 
