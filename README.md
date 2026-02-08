@@ -6,7 +6,7 @@ Every day should be documented inside the `day` folder
 
 ## Security Notice
 Since ive seen at least 80 unique clone in the past day, Ill try my best to not share anything private but, in production:
-- Secrets are managed with `Sealed Secrets`
+- Secrets are managed with `Sealed Secrets` (Which now should be working for this repo)
 - Credentials are stored in either `Azure Key Vault` or `AWS Secrets Manager`
 - Actual Network policies and roles are enforced, not simple port forwarding
 - All sensitive values are encrypted at rest
