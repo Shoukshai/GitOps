@@ -28,7 +28,18 @@ spec:
   values:
     grafana:
       enabled: true
-      adminPassword: "admin"
+      admin:
+        existingSecret: grafana-admin-password
+        userKey: admin-user
+        passwordKey: admin-password
+      env:
+        - name: GF_SECURITY_ADMIN_USER
+          value: "admin"
+        - name: GF_SECURITY_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: grafana-admin-password
+              key: admin-password
       service:
         type: NodePort
         nodePort: 30080
