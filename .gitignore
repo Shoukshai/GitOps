@@ -4,8 +4,8 @@
 !*sealed-secret.yaml
 .env
 .secrets/
-*pem
-*key
+*.pem
+*.key
 !sealed-secrets-pub.crt
 
 # Tokens
