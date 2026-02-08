@@ -144,3 +144,41 @@ flux reconcile kustomization infra-monitoring
 And now we should be able to connect to the grafana dashboard with our new password
 > [!Warning]
 > But all of this **for grafana** is a bit useless since at the first login, they ask us to change the password, so even if the first password is in clear, the new one shouldn't be on the github, ill try to use it for the next part
+
+## 8. Structure of the github repo
+```bash
+GitOps/
+├── apps
+│   ├── base
+│   │   └── whoami
+│   │       ├── deployment.yaml
+│   │       └── kustomization.yaml
+│   └── production
+├── clusters
+│   └── k3s
+│       └── flux-system
+│           ├── apps.yaml
+│           ├── gotk-components.yaml
+│           ├── gotk-sync.yaml
+│           ├── infrastructure.yaml
+│           ├── kustomization.yaml
+│           └── sources.yaml
+├── day
+│   ├── day1.md
+│   ├── day2.md
+│   └── day3.md
+├── infrastructure
+│   ├── ingress
+│   ├── monitoring
+│   │   └── kube-prometheus-stack.yaml
+│   ├── sealed-secrets
+│   │   ├── grafana-sealed-secret.yaml
+│   │   └── release.yaml
+│   └── sources
+│       ├── prometheus-community.yaml
+│       └── sealed-secrets.yaml
+├── README.md
+├── scripts
+│   └── debug_flux.sh
+└── sealed-secrets-pub.crt
+```
