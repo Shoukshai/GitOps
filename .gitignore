@@ -1,14 +1,22 @@
-# local secrets
+# Secrets and Keys
 *.secret
-*.key
+*-secret.yaml
+!*sealed-secret.yaml
 .env
 .secrets/
+*pem
+*key
+!sealed-secrets-pub.crt
 
 # Tokens
 *token*
-*ghp_*
+ghp_*
 
 # Temp files
 *.swp
 *.swo
 *~
+.DS_Store
+
+# Logs
+*.log
