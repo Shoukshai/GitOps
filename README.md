@@ -13,3 +13,9 @@ Since ive seen at least 80 unique clone in the past day, Ill try my best to not 
 
 **Current demo credentials:**
 - Grafana: `admin/admin`
+
+## Debug scripts
+Added a light debugging script to feed my local llm that capture Flux state for troubleshooting
+```bash
+./scripts/debug-flux.sh
+```
