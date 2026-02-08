@@ -1,5 +1,5 @@
 # Researches
-Today's researches was about `Sealed Secrets` and the `CI/CD Pipeline`
+Today's researches was about `Sealed Secrets` and the `CI/CD Pipeline` (for the next day, ill prepare the webapp or website dev)
 
 # Installations
 ## 1. Helm repo
