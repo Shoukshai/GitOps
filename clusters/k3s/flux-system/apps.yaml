@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: apps/base/whoami
+  path: apps/base
   prune: true
   sourceRef:
     kind: GitRepository
