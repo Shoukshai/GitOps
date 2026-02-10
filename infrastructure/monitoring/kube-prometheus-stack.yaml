@@ -41,6 +41,9 @@ spec:
         size: 2Gi
     
     prometheus:
+      service:
+        type: NodePort
+        nodePort: 30090
       prometheusSpec:
         retention: 7d
         storageSpec:
