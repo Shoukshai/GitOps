@@ -1,4 +1,5 @@
 # CI/CD Pipeline
+Today we built the CI/CD pipeline to automatically deploy our homepage.
 
 # Nginx installation (with dockerfile)
 ## 1. We make the dockerfile by copying the static files to the nginx folder
@@ -141,7 +142,7 @@ resources:
 ## 5. Then we add the homepage to flux
 We simply open the `clusters/k3s/flux-system/apps.yaml` and edit this line `path: apps/base/whoami` to be `path: apps/base` to deploy everything
 
-## 6. Then we push and deply
+## 6. Then we push and deploy
 ```bash
 git add homepage/ apps/base/homepage/ .github/workflows/build-homepage.yaml clusters/k3s/flux-system
 git commit -m "commit"
