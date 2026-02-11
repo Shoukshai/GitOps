@@ -23,13 +23,7 @@ spec:
     createNamespace: true
   values:
     service:
-      enabled: true
       type: NodePort
-    ports:
-      web:
-        nodePort: 30081
-      websecure:
-        nodePort: 30443
-    ingressRoute:
-      dashboard:
-        enabled: true
+      nodePorts:
+        web: 30081
+        websecure: 30443
