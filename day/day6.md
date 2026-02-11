@@ -217,3 +217,60 @@ We deletes all the old rules (beside ssh) and add a new one with:<br>
 `Guest port`: 30081
 
 And now we have clean url
+## 8. Structure of the github repo
+```bash
+GitOps/
+├── apps
+│   ├── base
+│   │   ├── homepage
+│   │   │   ├── deployment.yaml
+│   │   │   ├── ingress.yaml
+│   │   │   └── kustomization.yaml
+│   │   └── whoami
+│   │       ├── deployment.yaml
+│   │       └── kustomization.yaml
+│   └── production
+├── clusters
+│   └── k3s
+│       └── flux-system
+│           ├── apps.yaml
+│           ├── gotk-components.yaml
+│           ├── gotk-sync.yaml
+│           ├── infrastructure.yaml
+│           ├── kustomization.yaml
+│           └── sources.yaml
+├── day
+│   ├── day1.md
+│   ├── day2.md
+│   ├── day3.md
+│   ├── day4.md
+│   ├── day5.md
+│   └── day6.md
+├── homepage
+│   ├── assets
+│   │   └── background.png
+│   ├── Dockerfile
+│   ├── index.html
+│   └── style.css
+├── infrastructure
+│   ├── ingress
+│   ├── monitoring
+│   │   ├── grafana-ingress.yaml
+│   │   ├── kube-prometheus-stack.yaml
+│   │   ├── kustomization.yaml
+│   │   └── prometheus-ingress.yaml
+│   ├── sealed-secrets
+│   │   ├── grafana-sealed-secret.yaml
+│   │   └── release.yaml
+│   ├── sources
+│   │   ├── prometheus-community.yaml
+│   │   ├── sealed-secrets.yaml
+│   │   └── traefik.yaml
+│   └── traefik
+│       ├── dashboard-ingress.yaml
+│       └── release.yaml
+├── README.md
+├── scripts
+│   └── debug_flux.sh
+└── sealed-secrets-pub.crt
+```
