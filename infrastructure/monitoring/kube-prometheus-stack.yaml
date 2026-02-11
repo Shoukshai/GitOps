@@ -34,16 +34,14 @@ spec:
         userKey: admin-user
         passwordKey: admin-password
       service:
-        type: NodePort
-        nodePort: 30080
+        type: ClusterIP
       persistence:
         enabled: true
         size: 2Gi
     
     prometheus:
       service:
-        type: NodePort
-        nodePort: 30090
+        type: ClusterIP
       prometheusSpec:
         retention: 7d
         storageSpec:
