@@ -27,7 +27,7 @@ spec:
       type: NodePort
     ports:
       web:
-        nodePort: 30080
+        nodePort: 30081
       websecure:
         nodePort: 30443
     ingressRoute:
