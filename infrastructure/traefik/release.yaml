@@ -21,7 +21,7 @@ spec:
   targetNamespace: traefik
   install:
     createNamespace: true
-  value:
+  values:
     ports:
       web:
         port: 80
