@@ -213,8 +213,8 @@ kubectl rollout restart deployment homepage -n homepage
 ```
 ## 7. Change the port forwarding vm's config
 We deletes all the old rules (beside ssh) and add a new one with:<br>
-`Host port`: 80
-`Guest port`: 30081
+- `Host port`: 80
+- `Guest port`: 30081
 
 And now we have clean url
 ## 8. Structure of the github repo
